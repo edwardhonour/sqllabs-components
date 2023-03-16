@@ -55,6 +55,19 @@ export class DataService {
 
   }
 
+  getSQL(sql: any, id: any) {
+    this.getLocalStorage();
+    const data = {
+      "id" : id,
+      "sql": sql,     
+      "uid": this.uid
+    }
+
+  this.t= this.http.post("https://myna-api.com/api/getsql.php", data);
+  return this.t;
+
+  }
+
   getData(path: any, id: any, id2: any, id3: any) {
     this.getLocalStorage();
     const data = {

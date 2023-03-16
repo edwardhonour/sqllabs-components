@@ -10,8 +10,10 @@ import { SqlSubmitComponent } from './sqllabs/sql-submit/sql-submit.component';
 import { SqlSelectComponent } from './sqllabs/sql-select/sql-select.component';
 import { SqlTextareaComponent } from './sqllabs/sql-textarea/sql-textarea.component';
 import { SqlRadioGroupComponent } from './sqllabs/sql-radio-group/sql-radio-group.component';
+import { SqlTableComponent } from './sqllabs/sql-table/sql-table.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxTablePaginationModule } from 'ngx-table-pagination';
+import { SqlTableColumnComponent } from './sqllabs/sql-table-column/sql-table-column.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { NgxTablePaginationModule } from 'ngx-table-pagination';
     SqlRadioGroupComponent,
     HttpClientModule,
     Ng2SearchPipeModule,
-    NgxTablePaginationModule
+    NgxTablePaginationModule,
+    SqlTableColumnComponent,
+    SqlTableComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
