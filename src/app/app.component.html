@@ -1,23 +1,4 @@
-<!-- Table Example -->
-<sql-table
-     [sql]="'select id, template_name, sector from psp_template order by template_name'"
-     [search]="''"
-     [container_class]="''"
-     [container_style]="''"
-     [bs_row]="'Y'"
-     [bs_col]="'col-6'"
-     [card]="'Y'"
-     [title]="'Survey Templates'"
-     [class]="'table table-condensed table-striped'"
-     >
-        <th #column id="id" style="max-width: 100px;">ID</th>
-        <th #column id="template_name">Template Name</th>
-        <th #column id="sector">Sector</th>
-        <button class="btn btn-primary" #column>Show Dashboard</button>
-</sql-table>
-
-<!-- Form -->
-<!-- <sql-form [data]="formData" 
+<sql-form [data]="formData" 
     [card]="'Y'" 
     [title]="'Demo Form'"
     [bs_row]="'Y'" 
@@ -87,4 +68,4 @@
     </div>
   </div>
 
-</sql-form> -->
+</sql-form> 

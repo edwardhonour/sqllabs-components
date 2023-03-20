@@ -2,7 +2,6 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, 
 import { CommonModule } from '@angular/common';
 import { SqlInputComponent } from '../sql-input/sql-input.component';
 import { DataService } from 'src/app/data.service';
-import { Data } from '@angular/router';
 
 @Component({
   selector: 'sql-form',
@@ -14,6 +13,7 @@ import { Data } from '@angular/router';
 export class SqlFormComponent implements OnInit, DoCheck, OnChanges, AfterViewInit {
   
   constructor(private _dataService: DataService) {
+      
       this._dataService.dataSubject.subscribe(d => {
         this.data=d;
         this.counter++;

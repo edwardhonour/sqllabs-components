@@ -1,22 +1,24 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges, DoCheck, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { MatFormFieldModule, MatFormFieldControl } from '@angular/material/form-field';
-import { MatInput, MatInputModule } from '@angular/material/input';
+import {MatDatepickerInputEvent} from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldControl } from '@angular/material/form-field';
 import { MatIconModule  }  from '@angular/material/icon';
 import { DataService } from 'src/app/data.service';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @Component({
-  selector: 'sql-input',
+  selector: 'sql-datepicker',
   standalone: true,
-  imports: [CommonModule, FormsModule, MatFormFieldModule, MatInputModule, MatIconModule],
-  templateUrl: './sql-input.component.html',
-  styleUrls: ['./sql-input.component.css']
+  imports: [CommonModule, MatInputModule, MatDatepickerModule, MatFormFieldModule, MatNativeDateModule],
+  templateUrl: './sql-datepicker.component.html',
+  providers: [MatFormFieldModule,MatDatepickerModule],
+  styleUrls: ['./sql-datepicker.component.css']
 })
-export class SqlInputComponent implements OnInit, AfterViewInit {
-
-  value: any='';
-  fieldData: any = '';
+export class SqlDatepickerComponent  implements OnInit, AfterViewInit {
 
   @Input() col: string = '';
   @Input() data: any;
@@ -33,7 +35,15 @@ export class SqlInputComponent implements OnInit, AfterViewInit {
   counter: number = 0;
   @Output()
   change: EventEmitter<any> = new EventEmitter<any>();  
-  
+
+  events: string[] = [];
+  fieldData: any;
+  value: any;
+
+  addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
+    this.events.push(`${type}: ${event.value}`);
+  }
+
   ngAfterViewInit() {
     console.log('AVI in sql-input')
   
@@ -55,7 +65,6 @@ export class SqlInputComponent implements OnInit, AfterViewInit {
 
   }
 
-
   handleChange() {
      console.log('sql-input change')
      this.fieldData['submit']='N';
@@ -65,3 +74,4 @@ export class SqlInputComponent implements OnInit, AfterViewInit {
   }
 
 }
+

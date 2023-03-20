@@ -17,6 +17,10 @@ export class AppComponent implements OnChanges, DoCheck {
 
   }
 
+  doNothing(m: any) {
+
+  }
+
   ngDoCheck() {
     console.log('Parent Check');
     if (this.formData?.submit=='Y') {

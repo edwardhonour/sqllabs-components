@@ -1,0 +1,153 @@
+<!-- Dashboard Demo -->
+<sql-panel
+     [id]="'19'"
+     [sql]="'select * from psp_template where id = :id'">
+This is what goes to      
+
+</sql-panel>
+<!-- Table Example with edit -->
+<sql-table
+     [sql]="'select id, template_name, sector from psp_template order by template_name'"
+     [search]="''"
+     [edit]="'Y'"
+     [container_class]="'p-3'"
+     [container_style]="'background-color:lightgrey;'"
+     [bs_row]="'Y'"
+     [bs_col]="'col-9'"
+     [card]="'N'"
+     [title]="'Survey Templates'"
+     [class]="'table table-condensed table-striped'"
+     (button_click)="doNothing($event);"
+     (row_click)="doNothing($event);"
+     (top_button_click)="doNothing($event);"
+     >
+        <!-- table format -->
+        <th #column id="id" style="max-width: 100px;" [hidden]="true" >ID</th>
+        <th #column id="template_name" [hidden]="true" >Template Name</th>
+        <th #column id="sector" [hidden]="true" >Sector</th>
+        <button class="btn btn-primary" #column [hidden]="true" >Show Dashboard</button> 
+        <!-- edit form -->
+        <sql-form [data]="formData" 
+        [card]="'Y'" 
+        [title]="'Demo Form'"
+        [bs_row]="'Y'" 
+        [bs_col]="'col-xl-12'">
+        <sql-datepicker      
+        [appearance]="'fill'" 
+        [col]="'parent_id'"
+        [label]="'Parent ID'"
+        [style]="'width: 100px;'" 
+        [data]="formData"></sql-datepicker>
+    </sql-form>
+
+</sql-table> 
+
+<!-- Form -->
+
+<!-- <sql-form [data]="formData" 
+    [card]="'Y'" 
+    [title]="'Demo Form'"
+    [bs_row]="'Y'" 
+    [bs_col]="'col-xl-6'">
+    <sql-datepicker  
+    [bs_row]="'Y'"
+    [bs_col]="'col-xl-4 col-lg-6 col-sm-12'"      
+    [appearance]="'fill'" 
+    [col]="'parent_id'"
+    [label]="'Parent ID'"
+    [style]="'width: 100px;'" 
+    [data]="formData"></sql-datepicker>
+</sql-form>
+-->
+<sql-card
+     [title]="'Card Test'">
+     <sql-form [data]="formData" 
+     [card]="'Y'" 
+     [title]="'Demo Form'"
+     [bs_row]="'Y'" 
+     [bs_col]="'col-xl-6'"
+     (change)="loopBack($event)">
+     <sql-datepicker  
+     [bs_row]="'Y'"
+     [bs_col]="'col-xl-4 col-lg-6 col-sm-12'"      
+     [appearance]="'fill'" 
+     [col]="'parent_id'"
+     [label]="'Parent ID'"
+     [style]="'width: 100px;'" 
+     [data]="formData"></sql-datepicker>
+ </sql-form>
+
+</sql-card>  
+
+
+<!-- <sql-form [data]="formData" 
+    [card]="'Y'" 
+    [title]="'Demo Form'"
+    [bs_row]="'Y'" 
+    [bs_col]="'col-xl-6'"
+    (change)="loopBack($event)">
+      <sql-input  
+          [top_label]="'Y'"
+          [bs_row]="'Y'"
+          [bs_col]="'col-xl-4 col-lg-6 col-sm-12'"
+          [appearance]="'outline'" 
+          [col]="'section_id'"
+          [label]="'Section ID'"
+          [style]="'width: 400px;'" 
+          [data]="formData"></sql-input>
+      <sql-input  
+          [bs_row]="'Y'"
+          [bs_col]="'col-xl-4 col-lg-6 col-sm-12'"      
+          [appearance]="'fill'" 
+          [col]="'parent_id'"
+          [label]="'Parent ID'"
+          [style]="'width: 100px;'" 
+          [data]="formData"></sql-input>
+      <sql-input  
+          [bs_row]="'Y'"
+          [bs_col]="'col-xl-4 col-lg-6 col-sm-12'"      
+          [appearance]="'fill'" 
+          [col]="'option_text'"
+          [label]="'Option Text'"
+          [style]="'width: 700px;'" 
+          [data]="formData"></sql-input>
+      <sql-select  
+          [bs_row]="'Y'"
+          [bs_col]="'col-xl-4 col-lg-6 col-sm-12'"      
+          [handler]="'sql'" 
+          [sql]="'select id, template_name from psp_template order by template_name'"
+          [col]="'template_id'"
+          [label]="'Template ID'"
+          [style]="'width: 700px;'" 
+          [data]="formData"></sql-select>
+      <sql-radio-group  
+          [bs_row]="'Y'"
+          [bs_col]="'col-xl-4 col-lg-6 col-sm-12'"      
+          [handler]="'sql'" 
+          [sql]="'select id, template_name from psp_template order by template_name'"
+          [col]="'template_id'"
+          [label]="'Template ID'"
+          [style]="'width: 700px;'" 
+          [data]="formData"></sql-radio-group>          
+      <sql-textarea
+          [rows]="'5'"
+          [maxrows]="'10'"
+          [top_label]="'Y'"
+          [bs_row]="'Y'"
+          [bs_col]="'col-xl-4 col-lg-6 col-sm-12'"
+          [appearance]="'outline'" 
+          [col]="'section_id'"
+          [label]="'Section ID'"
+          [style]="'width: 400px;'" 
+          [data]="formData"></sql-textarea>
+
+  <div class="row">
+    <div class="col-6">
+      <sql-submit 
+          [class]="'btn btn-primary'"
+          [style]="'width: 200px;'" 
+          [data]="formData"></sql-submit>
+    </div>
+  </div>
+
+</sql-form> -->

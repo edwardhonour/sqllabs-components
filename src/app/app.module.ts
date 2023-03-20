@@ -14,6 +14,9 @@ import { SqlTableComponent } from './sqllabs/sql-table/sql-table.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxTablePaginationModule } from 'ngx-table-pagination';
 import { SqlTableColumnComponent } from './sqllabs/sql-table-column/sql-table-column.component';
+import { SqlDatepickerComponent } from './sqllabs/sql-datepicker/sql-datepicker.component';
+import { SqlCardComponent } from './sqllabs/sql-card/sql-card.component';
+import { SqlPanelComponent } from './sqllabs/sql-panel/sql-panel.component';
 
 @NgModule({
   declarations: [
@@ -28,11 +31,14 @@ import { SqlTableColumnComponent } from './sqllabs/sql-table-column/sql-table-co
     SqlSelectComponent,
     SqlTextareaComponent,
     SqlRadioGroupComponent,
+    SqlDatepickerComponent,
     HttpClientModule,
     Ng2SearchPipeModule,
     NgxTablePaginationModule,
     SqlTableColumnComponent,
-    SqlTableComponent
+    SqlTableComponent,
+    SqlCardComponent,
+    SqlPanelComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
